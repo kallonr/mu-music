@@ -1,0 +1,15 @@
+name: Sync from Gitee
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # 每6小时同步一次
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Gitee Repo
+        run: git clone https://gitee.com/kallonr/mu-music.git
+      - name: Push to GitHub
+        run: |
+          cd mu-music
+          git remote add github https://${{ secrets.GITHUB_TOKEN }}@github.com/your-username/repo-name.git
+          git push github main
