@@ -11,5 +11,5 @@ jobs:
       - name: Push to GitHub
         run: |
           cd mu-music
-          git remote add github https://${{ secrets.GITHUB_TOKEN }}@github.com/your-username/repo-name.git
+          git remote add github https://${{ secrets.GITHUB_TOKEN }}@github.com/kallonr/mu-music.git
           git push github main
