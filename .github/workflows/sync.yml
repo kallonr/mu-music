@@ -1,7 +1,5 @@
 name: Sync from Gitee
-on:
-  schedule:
-    - cron: '0 */6 * * *'  # 每6小时同步一次
+on: workflow_dispatch
 jobs:
   sync:
     runs-on: ubuntu-latest
